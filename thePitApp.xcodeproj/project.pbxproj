@@ -86,6 +86,7 @@
 		4083F9481BDDB27B00019DD6 /* flick-fade-rt.png in Resources */ = {isa = PBXBuildFile; fileRef = 4083F9411BDDB27B00019DD6 /* flick-fade-rt.png */; };
 		4083F9491BDDB27B00019DD6 /* flick-tab-bck.png in Resources */ = {isa = PBXBuildFile; fileRef = 4083F9421BDDB27B00019DD6 /* flick-tab-bck.png */; };
 		4083F94A1BDDB27B00019DD6 /* flick-tab-over.png in Resources */ = {isa = PBXBuildFile; fileRef = 4083F9431BDDB27B00019DD6 /* flick-tab-over.png */; };
+		4083F94D1BDDB32C00019DD6 /* ScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4083F94C1BDDB32C00019DD6 /* ScheduleViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -203,6 +204,8 @@
 		4083F9411BDDB27B00019DD6 /* flick-fade-rt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flick-fade-rt.png"; sourceTree = "<group>"; };
 		4083F9421BDDB27B00019DD6 /* flick-tab-bck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flick-tab-bck.png"; sourceTree = "<group>"; };
 		4083F9431BDDB27B00019DD6 /* flick-tab-over.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flick-tab-over.png"; sourceTree = "<group>"; };
+		4083F94B1BDDB32C00019DD6 /* ScheduleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduleViewController.h; sourceTree = "<group>"; };
+		4083F94C1BDDB32C00019DD6 /* ScheduleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduleViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -447,6 +450,8 @@
 		401B8F971B54B0170010D99E /* Schedule */ = {
 			isa = PBXGroup;
 			children = (
+				4083F94B1BDDB32C00019DD6 /* ScheduleViewController.h */,
+				4083F94C1BDDB32C00019DD6 /* ScheduleViewController.m */,
 			);
 			name = Schedule;
 			sourceTree = "<group>";
@@ -659,6 +664,7 @@
 				401B8F6D1B54A8450010D99E /* BlogDetailViewController.m in Sources */,
 				401B8F7F1B54A8940010D99E /* PageContainerViewController.m in Sources */,
 				401B8F741B54A86F0010D99E /* FacebookViewController.m in Sources */,
+				4083F94D1BDDB32C00019DD6 /* ScheduleViewController.m in Sources */,
 				401B8ECC1B54A3700010D99E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

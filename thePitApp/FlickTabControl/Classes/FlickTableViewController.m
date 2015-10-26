@@ -46,33 +46,37 @@
 	self.flickTabView.scrollView.contentInset = UIEdgeInsetsMake(0.0f, 20.0f, 0.0f, 20.0f);
 	self.flickTabView.scrollView.delegate = self.flickTabView;
 	
-	self.flickTabView.backgroundColor = [UIColor colorWithHue:0.573816156f saturation:0.03f brightness:0.91f alpha:1.0f];
+    //self.flickTabView.scrollView.backgroundColor = [UIColor blackColor];
+	self.flickTabView.backgroundColor = [UIColor blackColor];
 	
     //setting background of flicktabview (setting it to stretch over it by setting frame to be its width and height)
 	UIImageView* imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.flickTabView.frame.size.width, self.flickTabView.frame.size.height)];
 	imageView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
-	imageView.image = [UIImage imageNamed:@"flick-tab-bck.png"];
 	
 	[self.flickTabView addSubview:imageView];
 	
 	[self.flickTabView addSubview:self.flickTabView.scrollView];
 	
     //Left Cap set up
+    /*
 	UIImageView* leftCap = [[UIImageView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 39.0f, 43.0f)];
 	leftCap.image = [UIImage imageNamed:@"flick-fade-lt.png"];
 	leftCap.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleTopMargin;
 	self.flickTabView.leftCap = leftCap;
+     */
 	
     //Right cap set up
+    /*
 	UIImageView* rightCap = [[UIImageView alloc] initWithFrame:CGRectMake(self.flickTabView.frame.size.width-39.0f, 0.0f, 39.0f, 43.0f)];
 	rightCap.image = [UIImage imageNamed:@"flick-fade-rt.png"];
 	rightCap.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleTopMargin;
 	self.flickTabView.rightCap = rightCap;
-	
+	*/
     //adding cap to subviews
+    /*
 	[self.flickTabView addSubview:self.flickTabView.leftCap];
 	[self.flickTabView addSubview:self.flickTabView.rightCap];
-	
+	*/
 	[self.flickTabView awakeFromNib];
 	
     //header - first row of table view
@@ -126,7 +130,7 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
     // Set up the cell...
