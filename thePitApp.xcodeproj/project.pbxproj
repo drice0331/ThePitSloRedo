@@ -75,11 +75,17 @@
 		401B8F771B54A87B0010D99E /* LaunchNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 401B8F761B54A87B0010D99E /* LaunchNavigationController.m */; };
 		401B8F7E1B54A8940010D99E /* PageBeltTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 401B8F791B54A8940010D99E /* PageBeltTableController.m */; };
 		401B8F7F1B54A8940010D99E /* PageContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 401B8F7B1B54A8940010D99E /* PageContainerViewController.m */; };
-		401B8F801B54A8940010D99E /* ProgressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 401B8F7D1B54A8940010D99E /* ProgressViewController.m */; };
 		401B8F841B54A8A70010D99E /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 401B8F831B54A8A70010D99E /* Reachability.m */; };
 		401B8F871B54A8DE0010D99E /* TwitterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 401B8F861B54A8DE0010D99E /* TwitterController.m */; };
 		401B8F8C1B54A8E80010D99E /* YoutubeDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 401B8F891B54A8E80010D99E /* YoutubeDetailController.m */; };
 		401B8F8D1B54A8E80010D99E /* YoutubeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 401B8F8B1B54A8E80010D99E /* YoutubeViewController.m */; };
+		4083F9441BDDB27B00019DD6 /* FlickTabButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4083F9391BDDB27B00019DD6 /* FlickTabButton.m */; };
+		4083F9451BDDB27B00019DD6 /* FlickTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4083F93C1BDDB27B00019DD6 /* FlickTableViewController.m */; };
+		4083F9461BDDB27B00019DD6 /* FlickTabView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4083F93E1BDDB27B00019DD6 /* FlickTabView.m */; };
+		4083F9471BDDB27B00019DD6 /* flick-fade-lt.png in Resources */ = {isa = PBXBuildFile; fileRef = 4083F9401BDDB27B00019DD6 /* flick-fade-lt.png */; };
+		4083F9481BDDB27B00019DD6 /* flick-fade-rt.png in Resources */ = {isa = PBXBuildFile; fileRef = 4083F9411BDDB27B00019DD6 /* flick-fade-rt.png */; };
+		4083F9491BDDB27B00019DD6 /* flick-tab-bck.png in Resources */ = {isa = PBXBuildFile; fileRef = 4083F9421BDDB27B00019DD6 /* flick-tab-bck.png */; };
+		4083F94A1BDDB27B00019DD6 /* flick-tab-over.png in Resources */ = {isa = PBXBuildFile; fileRef = 4083F9431BDDB27B00019DD6 /* flick-tab-over.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -177,8 +183,6 @@
 		401B8F791B54A8940010D99E /* PageBeltTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageBeltTableController.m; sourceTree = "<group>"; };
 		401B8F7A1B54A8940010D99E /* PageContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageContainerViewController.h; sourceTree = "<group>"; };
 		401B8F7B1B54A8940010D99E /* PageContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageContainerViewController.m; sourceTree = "<group>"; };
-		401B8F7C1B54A8940010D99E /* ProgressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressViewController.h; sourceTree = "<group>"; };
-		401B8F7D1B54A8940010D99E /* ProgressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressViewController.m; sourceTree = "<group>"; };
 		401B8F821B54A8A70010D99E /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		401B8F831B54A8A70010D99E /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		401B8F851B54A8DE0010D99E /* TwitterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterController.h; sourceTree = "<group>"; };
@@ -188,6 +192,17 @@
 		401B8F8A1B54A8E80010D99E /* YoutubeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YoutubeViewController.h; sourceTree = "<group>"; };
 		401B8F8B1B54A8E80010D99E /* YoutubeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YoutubeViewController.m; sourceTree = "<group>"; };
 		401B8F901B54AEA30010D99E /* APIKeyAndConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIKeyAndConstants.h; sourceTree = "<group>"; };
+		4083F9381BDDB27B00019DD6 /* FlickTabButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickTabButton.h; sourceTree = "<group>"; };
+		4083F9391BDDB27B00019DD6 /* FlickTabButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickTabButton.m; sourceTree = "<group>"; };
+		4083F93A1BDDB27B00019DD6 /* FlickTabControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickTabControl.h; sourceTree = "<group>"; };
+		4083F93B1BDDB27B00019DD6 /* FlickTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickTableViewController.h; sourceTree = "<group>"; };
+		4083F93C1BDDB27B00019DD6 /* FlickTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickTableViewController.m; sourceTree = "<group>"; };
+		4083F93D1BDDB27B00019DD6 /* FlickTabView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickTabView.h; sourceTree = "<group>"; };
+		4083F93E1BDDB27B00019DD6 /* FlickTabView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickTabView.m; sourceTree = "<group>"; };
+		4083F9401BDDB27B00019DD6 /* flick-fade-lt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flick-fade-lt.png"; sourceTree = "<group>"; };
+		4083F9411BDDB27B00019DD6 /* flick-fade-rt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flick-fade-rt.png"; sourceTree = "<group>"; };
+		4083F9421BDDB27B00019DD6 /* flick-tab-bck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flick-tab-bck.png"; sourceTree = "<group>"; };
+		4083F9431BDDB27B00019DD6 /* flick-tab-over.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flick-tab-over.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -348,6 +363,7 @@
 		401B8F5F1B54A8180010D99E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4083F9361BDDB27B00019DD6 /* FlickTabControl */,
 				401B8F621B54A8320010D99E /* BeltProgressImage.h */,
 				401B8F631B54A8320010D99E /* BeltProgressImage.m */,
 			);
@@ -424,8 +440,6 @@
 				401B8F791B54A8940010D99E /* PageBeltTableController.m */,
 				401B8F7A1B54A8940010D99E /* PageContainerViewController.h */,
 				401B8F7B1B54A8940010D99E /* PageContainerViewController.m */,
-				401B8F7C1B54A8940010D99E /* ProgressViewController.h */,
-				401B8F7D1B54A8940010D99E /* ProgressViewController.m */,
 			);
 			name = BeltProgress;
 			sourceTree = "<group>";
@@ -435,6 +449,40 @@
 			children = (
 			);
 			name = Schedule;
+			sourceTree = "<group>";
+		};
+		4083F9361BDDB27B00019DD6 /* FlickTabControl */ = {
+			isa = PBXGroup;
+			children = (
+				4083F9371BDDB27B00019DD6 /* Classes */,
+				4083F93F1BDDB27B00019DD6 /* Resources */,
+			);
+			path = FlickTabControl;
+			sourceTree = "<group>";
+		};
+		4083F9371BDDB27B00019DD6 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				4083F9381BDDB27B00019DD6 /* FlickTabButton.h */,
+				4083F9391BDDB27B00019DD6 /* FlickTabButton.m */,
+				4083F93A1BDDB27B00019DD6 /* FlickTabControl.h */,
+				4083F93B1BDDB27B00019DD6 /* FlickTableViewController.h */,
+				4083F93C1BDDB27B00019DD6 /* FlickTableViewController.m */,
+				4083F93D1BDDB27B00019DD6 /* FlickTabView.h */,
+				4083F93E1BDDB27B00019DD6 /* FlickTabView.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		4083F93F1BDDB27B00019DD6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4083F9401BDDB27B00019DD6 /* flick-fade-lt.png */,
+				4083F9411BDDB27B00019DD6 /* flick-fade-rt.png */,
+				4083F9421BDDB27B00019DD6 /* flick-tab-bck.png */,
+				4083F9431BDDB27B00019DD6 /* flick-tab-over.png */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -481,7 +529,7 @@
 		401B8EBE1B54A3700010D99E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = thePitSlo;
 				TargetAttributes = {
 					401B8EC51B54A3700010D99E = {
@@ -542,6 +590,7 @@
 				401B8EFF1B54A5BC0010D99E /* a_fb.png in Resources */,
 				401B8F171B54A5D30010D99E /* brown_w_white.png in Resources */,
 				401B8F3C1B54A60F0010D99E /* orange.jpg in Resources */,
+				4083F94A1BDDB27B00019DD6 /* flick-tab-over.png in Resources */,
 				401B8F2D1B54A5E60010D99E /* green_w_black.png in Resources */,
 				401B8F5A1B54A6790010D99E /* yellow_w_orange.png in Resources */,
 				401B8EFE1B54A5BC0010D99E /* a_dir.png in Resources */,
@@ -549,6 +598,7 @@
 				401B8F511B54A6790010D99E /* white_w_blue.png in Resources */,
 				401B8F561B54A6790010D99E /* white_w_red.png in Resources */,
 				401B8F191B54A5D30010D99E /* camo.jpg in Resources */,
+				4083F9471BDDB27B00019DD6 /* flick-fade-lt.png in Resources */,
 				401B8F591B54A6790010D99E /* yellow_w_black.png in Resources */,
 				401B8F421B54A60F0010D99E /* reload-25.png in Resources */,
 				401B8F581B54A6790010D99E /* white.jpg in Resources */,
@@ -561,6 +611,7 @@
 				401B8F5C1B54A6790010D99E /* yellow.png in Resources */,
 				401B8F151B54A5D30010D99E /* blue.png in Resources */,
 				401B8F2E1B54A5E60010D99E /* green_w_white.png in Resources */,
+				4083F9481BDDB27B00019DD6 /* flick-fade-rt.png in Resources */,
 				401B8ED71B54A3700010D99E /* Images.xcassets in Resources */,
 				401B8F141B54A5D30010D99E /* blue_w_black.png in Resources */,
 				401B8F1B1B54A5D30010D99E /* Contact Button 4.png in Resources */,
@@ -569,6 +620,7 @@
 				401B8F411B54A60F0010D99E /* red.png in Resources */,
 				401B8F541B54A6790010D99E /* white_w_orange.png in Resources */,
 				401B8F5B1B54A6790010D99E /* yellow_w_white.png in Resources */,
+				4083F9491BDDB27B00019DD6 /* flick-tab-bck.png in Resources */,
 				401B8F131B54A5D30010D99E /* black.jpg in Resources */,
 				401B8F291B54A5E60010D99E /* flick-fade-rt.png in Resources */,
 			);
@@ -591,16 +643,18 @@
 				401B8F671B54A8320010D99E /* BeltProgressImage.m in Sources */,
 				401B8F661B54A8320010D99E /* BeltProgressDetailController.m in Sources */,
 				401B8F6E1B54A8450010D99E /* BlogViewController.m in Sources */,
+				4083F9441BDDB27B00019DD6 /* FlickTabButton.m in Sources */,
 				401B8F681B54A8320010D99E /* BeltProgressTableController.m in Sources */,
 				401B8F8C1B54A8E80010D99E /* YoutubeDetailController.m in Sources */,
 				401B8F841B54A8A70010D99E /* Reachability.m in Sources */,
 				401B8F871B54A8DE0010D99E /* TwitterController.m in Sources */,
 				401B8F711B54A8610010D99E /* ContactViewController.m in Sources */,
-				401B8F801B54A8940010D99E /* ProgressViewController.m in Sources */,
 				401B8ED21B54A3700010D99E /* ViewController.m in Sources */,
 				401B8F8D1B54A8E80010D99E /* YoutubeViewController.m in Sources */,
 				401B8F771B54A87B0010D99E /* LaunchNavigationController.m in Sources */,
+				4083F9461BDDB27B00019DD6 /* FlickTabView.m in Sources */,
 				401B8ECF1B54A3700010D99E /* AppDelegate.m in Sources */,
+				4083F9451BDDB27B00019DD6 /* FlickTableViewController.m in Sources */,
 				401B8F7E1B54A8940010D99E /* PageBeltTableController.m in Sources */,
 				401B8F6D1B54A8450010D99E /* BlogDetailViewController.m in Sources */,
 				401B8F7F1B54A8940010D99E /* PageContainerViewController.m in Sources */,
@@ -660,6 +714,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -727,6 +782,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = thePitApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.thePit.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -737,6 +793,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = thePitApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.thePit.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -755,6 +812,7 @@
 				);
 				INFOPLIST_FILE = thePitAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.thePit.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/thePitApp.app/thePitApp";
 			};
@@ -770,6 +828,7 @@
 				);
 				INFOPLIST_FILE = thePitAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.thePit.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/thePitApp.app/thePitApp";
 			};

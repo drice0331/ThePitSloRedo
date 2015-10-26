@@ -84,7 +84,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BlogCell" forIndexPath:indexPath];
     cell.textLabel.text = [[feeds objectAtIndex:indexPath.row] objectForKey: @"title"];
 
     cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;

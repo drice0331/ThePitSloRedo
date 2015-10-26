@@ -28,6 +28,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    [self.webView setBackgroundColor:[UIColor blackColor]];
+    
     NSURL *myURL = [NSURL URLWithString: [self.url stringByAddingPercentEscapesUsingEncoding:
                                           NSUTF8StringEncoding]];
     NSURLRequest *request = [NSURLRequest requestWithURL:myURL];

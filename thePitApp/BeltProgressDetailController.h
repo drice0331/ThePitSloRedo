@@ -14,6 +14,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *nameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *beltColorLabel;
 @property (strong, nonatomic) IBOutlet UILabel *dayProgressLabel;
+@property (strong, nonatomic) IBOutlet UIButton *beltInfoLink;
 
 @property (weak, nonatomic) IBOutlet BeltProgressImage *beltProgress;
 

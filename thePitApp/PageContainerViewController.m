@@ -24,7 +24,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Create the data model
+	// Create the data model    
     _pageTables = @[@"Kempo Adults", @"Kempo Kids", @"Jiu Jitsu"];
     
     //title index variable initialize
@@ -49,7 +49,7 @@
     [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
     
     // Change the size of page view controller
-    self.pageViewController.view.frame = CGRectMake(0, 60, self.view.frame.size.width, self.view.frame.size.height - 60);
+    self.pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     
     [self addChildViewController:_pageViewController];
     [self.view addSubview:_pageViewController.view];

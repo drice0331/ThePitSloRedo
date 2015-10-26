@@ -12,7 +12,6 @@
 @interface PageBeltTableController : UITableViewController <NSXMLParserDelegate, UIAlertViewDelegate>
 
 @property (strong, nonatomic) NSString *beltType;
-@property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property NSUInteger pageIndex;
 
 @end

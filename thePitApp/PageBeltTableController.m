@@ -18,6 +18,7 @@
     NSMutableString *name;
     NSMutableString *progress;
     NSMutableString *beltcolor;
+    NSMutableString *infolink;
     NSString *element;
 }
 
@@ -38,6 +39,9 @@
 {
     [super viewDidLoad];
     
+    CGFloat yView = self.view.frame.origin.y;
+    CGFloat y = self.tableView.frame.origin.y;
+    NSLog(@"%f and view - %f", y, yView);
     
     dataLink = [NSURL URLWithString:@"https://spreadsheets.google.com/feeds/list/0AsP6lrGC-fRldE43YWxHZGtwOHdiN0UwNU13OHRDRGc/od6/public/values"];
     self.navigationItem.title = _beltType;
@@ -122,6 +126,7 @@
         name = [[NSMutableString alloc] init];
         progress    = [[NSMutableString alloc] init];
         beltcolor = [[NSMutableString alloc] init];
+        infolink = [[NSMutableString alloc] init];
         
     }
     
@@ -136,6 +141,7 @@
         [entry setObject:name forKey:@"gsx:name"];
         [entry setObject:progress forKey:@"gsx:progress"];
         [entry setObject:beltcolor forKey:@"gsx:belt"];
+        [entry setObject:infolink forKey:@"gsx:infolink"];
         
         [feeds addObject:[entry copy]];
         
@@ -158,6 +164,10 @@
     {
         [beltcolor appendString:string];
     }
+    else if([element isEqualToString:@"gsx:infolink"])
+    {
+        [infolink appendString:string];
+    }
     
 }
 
@@ -176,8 +186,9 @@
         NSString *gname = [feeds[indexPath.row] objectForKey:@"gsx:name"];
         NSString *gprogress = [feeds[indexPath.row] objectForKey:@"gsx:progress"];
         NSString *gcolor = [feeds[indexPath.row] objectForKey:@"gsx:belt"];
+        NSString *ginfolink = [feeds[indexPath.row] objectForKey:@"gsx:infolink"];
         BeltProgressDetailController *bpdc = [segue destinationViewController];
-        bpdc.beltProgressDetailInfo = [[NSArray alloc] initWithObjects: gname, gprogress, gcolor, _beltType, nil];
+        bpdc.beltProgressDetailInfo = [[NSArray alloc] initWithObjects: gname, gprogress, gcolor, _beltType, ginfolink, nil];
         
         //NSLog(gcolor);
         NSLog(@"%lu ", (unsigned long)bpdc.beltProgressDetailInfo.count);

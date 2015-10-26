@@ -40,6 +40,13 @@
     latitude = 0;
     longitude = 0;
     
+    //set label text
+    [self.phoneNumber setTitle:@"805-549-8800" forState:UIControlStateNormal];
+    [self.email setTitle:@" contact@thepitslo.com" forState:UIControlStateNormal];
+    [self.address setTitle:@"1285 Laurel Lane San Luis Obispo, CA 93401" forState:UIControlStateNormal];
+
+    self.address.titleLabel.text = @"Address: 1285 Laurel Lane";
+    
     //position text in buttons
     self.phoneNumber.titleLabel.textAlignment = NSTextAlignmentLeft;
     self.email.titleLabel.textAlignment = NSTextAlignmentLeft;

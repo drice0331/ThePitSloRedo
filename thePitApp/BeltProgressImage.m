@@ -67,50 +67,44 @@ NSDictionary *colors;// = [NSDictionary dictionaryWithObjects:keys forKeys:color
 
 - (void)drawRect:(CGRect)rect
 {
-    //NSAttributedString *text;
-    //UIBezierPath *roundedRect = [UIBezierPath bezierPathWithRoundedRect:self.bounds cornerRadius:CORNER_RADIUS];
-    //[roundedRect addClip];
-    /*
-    if([_groupName isEqualToString:@"HKAdults" ])
-    {
-        keys = [NSArray arrayWithObjects:@"White", @"Yellow", @"Orange", @"Purple", @"Blue", @"Blue w/ black",
-                @"Green", @"Green w/ black", @"Red", @"Red w/ black", @"Brown", @"Brown/Black", @"Black", nil];
-        colorImagePaths = [NSArray arrayWithObjects:@"white.jpg", @"yellow.jpg", @"orange.jpg", @"purple.jpg", @"blue.jpg",
-            @"blueblack.jpg", @"green.jpg", @"greenblack.jpg", @"red.jpg", @"redblack.jpg", @"brown.jpg", @"brownblack.jpg", @"black.jpg", nil];
-        
-    }
-    else if([_groupName isEqualToString:@"HKKids" ])
-    {
-        keys = [NSArray arrayWithObjects:@"White", @"Yellow", @"Orange", @"Purple", @"Blue", @"Blue w/ black",
-                @"Green", @"Green w/ white",@"Green w/ black", @"Red", @"Red w/ white", @"Red w/ black", @"Brown",
-                @"Brown w/ white", @"Brown w/ Black", @"Black", nil];
-        colorImagePaths = [NSArray arrayWithObjects:@"white.jpg", @"yellow.jpg", @"orange.jpg", @"purple.jpg", @"blue.jpg",
-                @"blueblack.jpg", @"green.jpg", @"greenwhite.jpg", @"greenblack.jpg", @"red.jpg", @"redwhite.jpg", @"redblack.jpg", @"brown.jpg", @"brownwhite", @"brownwithblack.jpg", @"black.jpg", nil];
-    }
-    else if([_groupName isEqualToString:@"PeeWees"])
-    {
-        keys = [NSArray arrayWithObjects:@"White", @"White w/ Yellow", @"White w/ Orange", @"White w/ Purple",  @"White w/ Blue", @"White w/ Green", @"White w/ Red", @"White w/ Brown", @"White w/ Black", @"White w/ Black x2", @"Yellow", @"Yellow w/ White", @"Yellow w/ Orange", @"Yellow w/ Black", @"Yellow/Orange", @"Yellow/Black", @"Camo", nil];
-        colorImagePaths = [NSArray arrayWithObjects:@"white.jpg", @"whiteyellow.jpg", @"whiteorange.jpg", @"whitepurple.jpg",  @"whiteblue.jpg", @"whitegreen.jpg", @"whitered.jpg", @"whitebrown.jpg", @"whiteblack.jpg", @"whiteblack2.jpg", @"yellow.jpg", @"yellowwhite.jpg", @"yellowwithorange.jpg", @"yellowwithblack.jpg", @"yelloworange.jpg", @"yellowblack.jpg", @"camo.jpg", nil];
-    }
-    else //BJJ
-    {
-        keys = [NSArray arrayWithObjects:@"White", @"Blue", @"Purple", @"Brown", "Black", nil];
-        colorImagePaths = [NSArray arrayWithObjects:@"white.jpg", @"blue.jpg", @"purple.jpg", @"brown.jpg", @"black.jpg", nil];
-    }*/
-    
-    keys = [NSArray arrayWithObjects:@"White", @"Yellow", @"Orange", @"Purple", @"Blue", @"Green", @"Red", @"Brown", @"Black",  nil];
-    colorImagePaths = [NSArray arrayWithObjects:@"white.jpg", @"yellow.jpg", @"orange.jpg", @"purple.jpg", @"blue.jpg", @"green.jpg", @"red.jpg", @"brown.jpg", @"black.jpg", nil];
+
+    keys = [NSArray arrayWithObjects:
+        @"White", @"WhiteYellow", @"WhiteOrange", @"WhitePurple", @"WhiteBlue", @"WhiteGreen", @"WhiteRed", @"WhiteBrown", @"WhiteBlack",
+        @"Yellow", @"YellowWhite", @"YellowOrange", @"YellowBlack",
+        @"Orange",
+        @"Purple",
+        @"Blue", @"BlueBlack",
+        @"Green", @"GreenWhite", @"GreenBlack",
+        @"Red", @"RedWhite", @"RedBlack",
+        @"Brown", @"BrownWhite", @"BrownBlack",
+        @"Black",
+        @"Camo",  nil];
+    colorImagePaths = [NSArray arrayWithObjects:
+        @"white.jpg", @"white_w_yellow.png", @"white_w_orange.png", @"white_w_purple.png", @"white_w_blue.png", @"white_w_green.png", @"white_w_red.png", @"white_w_brown.png", @"white_w_black.png",
+        @"yellow.png", @"yellow_w_white.png", @"yellow_w_orange.png", @"yellow_w_black.png",
+        @"orange.jpg",
+        @"purple.jpg",
+        @"blue.png", @"blue_w_black.png",
+        @"green.png", @"green_w_white.png", @"green_w_black.png",
+        @"red.png", @"red_w_white.png", @"red_w_black.png",
+        @"brown.png", @"brown_w_white.png", @"brown_w_black.png",
+        @"black.jpg",
+        @"camo.jpg", nil];
     
     colors = [NSDictionary dictionaryWithObjects:colorImagePaths forKeys:keys];
     
-    UIImage *beltImage = [UIImage imageNamed:@"belt_transparent.png"];
+    UIImage *beltImage = [UIImage imageNamed:@"belt_transparent1.png"];
     NSString *backgroundImagePath = [colors objectForKey:_color];
     UIImage *backgroundImage = [UIImage imageNamed:backgroundImagePath];
     
     UIImageView *view = [[UIImageView alloc] initWithImage:beltImage];
     
     //CGRect background = view.frame;
-    CGFloat widthFraction = view.frame.size.width/37.50;
+    //CGFloat widthFraction = view.frame.size.width/37.50;
+    CGFloat leftEdgeFraction = view.frame.size.width * .09726027;
+    CGFloat widthFraction = (view.frame.size.width * .80958904)/100;
+    //CGFloat leftEdgeFraction = self.frame.size.width * .09726027;
+    //CGFloat widthFraction = (self.frame.size.width * .80958904)/100;
     
     //30,32,34 , 600 belt width, 660 width from origin, 730 total width
     
@@ -128,16 +122,29 @@ NSDictionary *colors;// = [NSDictionary dictionaryWithObjects:keys forKeys:color
     
     UIGraphicsBeginImageContext(beltImage.size);
     
-    
-    [backgroundImage drawInRect:CGRectMake(0, 0, (widthFraction*(3.97 + _progressValue)), backgroundImage.size.height)];
-    //[beltImage drawInRect:CGRectMake(backgroundImage.size.width - beltImage.size.width, backgroundImage.size.height - beltImage.size.height, beltImage.size.width, beltImage.size.height)];
+
+    UIImage *croppedBckImage = [self croppIngimageByImageName:backgroundImage toRect:CGRectMake(0, 0, leftEdgeFraction + (widthFraction*_progressValue), backgroundImage.size.height)];
+    [croppedBckImage drawInRect:CGRectMake(0, 0, leftEdgeFraction + (widthFraction*_progressValue), backgroundImage.size.height)];
+
     UIImage *result = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
     [result drawInRect:rect];
     [beltImage drawInRect:rect];
+     
+     
+    
+    
     
 }
 
+- (UIImage *)croppIngimageByImageName:(UIImage *)imageToCrop toRect:(CGRect)rect
+{
+    CGImageRef imageRef = CGImageCreateWithImageInRect([imageToCrop CGImage], rect);
+    UIImage *cropped = [UIImage imageWithCGImage:imageRef];
+    CGImageRelease(imageRef);
+    
+    return cropped;
+}
 
 @end
