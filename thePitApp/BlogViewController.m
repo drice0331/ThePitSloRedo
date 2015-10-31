@@ -43,7 +43,10 @@
 {
     [super viewDidLoad];
     
-	// Do any additional setup after loading the view.
+    self.view.backgroundColor = [UIColor blackColor];
+    self.tableView.separatorColor = [UIColor redColor];
+    self.tableView.backgroundColor = [UIColor blackColor];
+    
     feeds = [[NSMutableArray alloc] init];
     NSURL *url = [NSURL URLWithString:@"http://thepitslo.blogspot.com/feeds/posts/default?alt=rss"];
     parser = [[NSXMLParser alloc] initWithContentsOfURL:url];
@@ -91,6 +94,7 @@
     cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:17.0];
     cell.textLabel.numberOfLines = 0;
     cell.textLabel.textColor = [UIColor whiteColor];
+    cell.backgroundColor = [UIColor blackColor];
   
     return cell;
 }

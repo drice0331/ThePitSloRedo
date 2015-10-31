@@ -11,7 +11,6 @@
 @interface BeltProgressTableController : UITableViewController <NSXMLParserDelegate>
 
 @property (strong, nonatomic) NSString *beltType;
-@property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 
 @end

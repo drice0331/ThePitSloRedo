@@ -68,7 +68,7 @@
     
     UIBarButtonItem *shareButton = [[UIBarButtonItem alloc]
                                     initWithTitle:@"Share"
-                                    style:UIBarButtonItemStyleBordered
+                                    style:UIBarButtonItemStylePlain
                                     target:self
                                     action:@selector(shareDocument:)];
     self.navigationItem.rightBarButtonItem = shareButton;

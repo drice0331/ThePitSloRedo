@@ -79,13 +79,11 @@
 		401B8F871B54A8DE0010D99E /* TwitterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 401B8F861B54A8DE0010D99E /* TwitterController.m */; };
 		401B8F8C1B54A8E80010D99E /* YoutubeDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 401B8F891B54A8E80010D99E /* YoutubeDetailController.m */; };
 		401B8F8D1B54A8E80010D99E /* YoutubeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 401B8F8B1B54A8E80010D99E /* YoutubeViewController.m */; };
+		4022E78A1BE1B7DF00B07D65 /* icon_phone_87.png in Resources */ = {isa = PBXBuildFile; fileRef = 4022E7881BE1B7DF00B07D65 /* icon_phone_87.png */; };
+		4022E78B1BE1B7DF00B07D65 /* icon_phone_180.png in Resources */ = {isa = PBXBuildFile; fileRef = 4022E7891BE1B7DF00B07D65 /* icon_phone_180.png */; };
 		4083F9441BDDB27B00019DD6 /* FlickTabButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4083F9391BDDB27B00019DD6 /* FlickTabButton.m */; };
 		4083F9451BDDB27B00019DD6 /* FlickTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4083F93C1BDDB27B00019DD6 /* FlickTableViewController.m */; };
 		4083F9461BDDB27B00019DD6 /* FlickTabView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4083F93E1BDDB27B00019DD6 /* FlickTabView.m */; };
-		4083F9471BDDB27B00019DD6 /* flick-fade-lt.png in Resources */ = {isa = PBXBuildFile; fileRef = 4083F9401BDDB27B00019DD6 /* flick-fade-lt.png */; };
-		4083F9481BDDB27B00019DD6 /* flick-fade-rt.png in Resources */ = {isa = PBXBuildFile; fileRef = 4083F9411BDDB27B00019DD6 /* flick-fade-rt.png */; };
-		4083F9491BDDB27B00019DD6 /* flick-tab-bck.png in Resources */ = {isa = PBXBuildFile; fileRef = 4083F9421BDDB27B00019DD6 /* flick-tab-bck.png */; };
-		4083F94A1BDDB27B00019DD6 /* flick-tab-over.png in Resources */ = {isa = PBXBuildFile; fileRef = 4083F9431BDDB27B00019DD6 /* flick-tab-over.png */; };
 		4083F94D1BDDB32C00019DD6 /* ScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4083F94C1BDDB32C00019DD6 /* ScheduleViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -193,6 +191,8 @@
 		401B8F8A1B54A8E80010D99E /* YoutubeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YoutubeViewController.h; sourceTree = "<group>"; };
 		401B8F8B1B54A8E80010D99E /* YoutubeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YoutubeViewController.m; sourceTree = "<group>"; };
 		401B8F901B54AEA30010D99E /* APIKeyAndConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIKeyAndConstants.h; sourceTree = "<group>"; };
+		4022E7881BE1B7DF00B07D65 /* icon_phone_87.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_phone_87.png; sourceTree = "<group>"; };
+		4022E7891BE1B7DF00B07D65 /* icon_phone_180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_phone_180.png; sourceTree = "<group>"; };
 		4083F9381BDDB27B00019DD6 /* FlickTabButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickTabButton.h; sourceTree = "<group>"; };
 		4083F9391BDDB27B00019DD6 /* FlickTabButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickTabButton.m; sourceTree = "<group>"; };
 		4083F93A1BDDB27B00019DD6 /* FlickTabControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickTabControl.h; sourceTree = "<group>"; };
@@ -297,6 +297,8 @@
 				401B8F251B54A5E60010D99E /* icon_phone_120.png */,
 				401B8F261B54A5E60010D99E /* icon_phone-58-settings.png */,
 				401B8F271B54A5E60010D99E /* icon_phone-80-spotlight.png */,
+				4022E7881BE1B7DF00B07D65 /* icon_phone_87.png */,
+				4022E7891BE1B7DF00B07D65 /* icon_phone_180.png */,
 				401B8ECA1B54A3700010D99E /* Info.plist */,
 				401B8F331B54A60F0010D99E /* LaunchImage-700-568h@2x.png */,
 				401B8ECB1B54A3700010D99E /* main.m */,
@@ -539,6 +541,7 @@
 				TargetAttributes = {
 					401B8EC51B54A3700010D99E = {
 						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = 4F8EVAQW4W;
 					};
 					401B8EDE1B54A3700010D99E = {
 						CreatedOnToolsVersion = 6.3.2;
@@ -577,6 +580,7 @@
 				401B8EFB1B54A5BC0010D99E /* a_alpha.png in Resources */,
 				401B8F2C1B54A5E60010D99E /* forward-25.png in Resources */,
 				401B8F011B54A5BC0010D99E /* a_youtube.png in Resources */,
+				4022E78B1BE1B7DF00B07D65 /* icon_phone_180.png in Resources */,
 				401B8F031B54A5BC0010D99E /* back-25.png in Resources */,
 				401B8F501B54A6790010D99E /* white_w_black.png in Resources */,
 				401B8EFD1B54A5BC0010D99E /* a_calendar.png in Resources */,
@@ -595,7 +599,6 @@
 				401B8EFF1B54A5BC0010D99E /* a_fb.png in Resources */,
 				401B8F171B54A5D30010D99E /* brown_w_white.png in Resources */,
 				401B8F3C1B54A60F0010D99E /* orange.jpg in Resources */,
-				4083F94A1BDDB27B00019DD6 /* flick-tab-over.png in Resources */,
 				401B8F2D1B54A5E60010D99E /* green_w_black.png in Resources */,
 				401B8F5A1B54A6790010D99E /* yellow_w_orange.png in Resources */,
 				401B8EFE1B54A5BC0010D99E /* a_dir.png in Resources */,
@@ -603,7 +606,6 @@
 				401B8F511B54A6790010D99E /* white_w_blue.png in Resources */,
 				401B8F561B54A6790010D99E /* white_w_red.png in Resources */,
 				401B8F191B54A5D30010D99E /* camo.jpg in Resources */,
-				4083F9471BDDB27B00019DD6 /* flick-fade-lt.png in Resources */,
 				401B8F591B54A6790010D99E /* yellow_w_black.png in Resources */,
 				401B8F421B54A60F0010D99E /* reload-25.png in Resources */,
 				401B8F581B54A6790010D99E /* white.jpg in Resources */,
@@ -616,7 +618,6 @@
 				401B8F5C1B54A6790010D99E /* yellow.png in Resources */,
 				401B8F151B54A5D30010D99E /* blue.png in Resources */,
 				401B8F2E1B54A5E60010D99E /* green_w_white.png in Resources */,
-				4083F9481BDDB27B00019DD6 /* flick-fade-rt.png in Resources */,
 				401B8ED71B54A3700010D99E /* Images.xcassets in Resources */,
 				401B8F141B54A5D30010D99E /* blue_w_black.png in Resources */,
 				401B8F1B1B54A5D30010D99E /* Contact Button 4.png in Resources */,
@@ -625,8 +626,8 @@
 				401B8F411B54A60F0010D99E /* red.png in Resources */,
 				401B8F541B54A6790010D99E /* white_w_orange.png in Resources */,
 				401B8F5B1B54A6790010D99E /* yellow_w_white.png in Resources */,
-				4083F9491BDDB27B00019DD6 /* flick-tab-bck.png in Resources */,
 				401B8F131B54A5D30010D99E /* black.jpg in Resources */,
+				4022E78A1BE1B7DF00B07D65 /* icon_phone_87.png in Resources */,
 				401B8F291B54A5E60010D99E /* flick-fade-rt.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -761,7 +762,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Johnathan Rice (4F8EVAQW4W)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -786,10 +787,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = thePitApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.thePit.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.thePit.thePitSlo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -797,10 +802,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Johnathan Rice (4F8EVAQW4W)";
 				INFOPLIST_FILE = thePitApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.thePit.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.thePit.thePitSlo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "22621ccf-0e22-4761-aab6-33ee96bc76e2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -86,6 +86,9 @@
                                 <state key="normal" backgroundImage="a_youtube.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="aT5-ri-Y9Q" kind="push" id="lQF-0d-JLk"/>
+                                </connections>
                             </button>
                         </subviews>
                         <animations/>
@@ -403,7 +406,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Gh-tO-Yek" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="765" y="-582"/>
+            <point key="canvasLocation" x="529" y="-666"/>
         </scene>
         <!--Youtube Detail Controller-->
         <scene sceneID="1W2-2G-M8o">
@@ -436,7 +439,7 @@
                                 <animations/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" id="1d1-58-lwH">
-                                <rect key="frame" x="126" y="223" width="178" height="30"/>
+                                <rect key="frame" x="126" y="203" width="178" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -448,7 +451,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3kh-JG-aEa">
-                                <rect key="frame" x="126" y="161" width="178" height="30"/>
+                                <rect key="frame" x="126" y="141" width="178" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -461,7 +464,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6H5-wm-TjH">
-                                <rect key="frame" x="126" y="93" width="178" height="30"/>
+                                <rect key="frame" x="126" y="73" width="178" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -474,7 +477,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Call" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XBA-Y6-ReA">
-                                <rect key="frame" x="46" y="93" width="72" height="30"/>
+                                <rect key="frame" x="46" y="73" width="72" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -482,7 +485,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bgI-rQ-uHj">
-                                <rect key="frame" x="46" y="165" width="42" height="21"/>
+                                <rect key="frame" x="46" y="145" width="42" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -490,7 +493,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ut6-h4-rWA">
-                                <rect key="frame" x="46" y="227" width="64" height="21"/>
+                                <rect key="frame" x="46" y="207" width="64" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -504,8 +507,11 @@
                     <navigationItem key="navigationItem" id="kBc-X1-kTi"/>
                     <connections>
                         <outlet property="address" destination="1d1-58-lwH" id="qsa-i8-cdd"/>
+                        <outlet property="addressLabel" destination="Ut6-h4-rWA" id="tZa-b9-Ngj"/>
                         <outlet property="email" destination="3kh-JG-aEa" id="RlS-nK-tM0"/>
+                        <outlet property="emailLabel" destination="bgI-rQ-uHj" id="fms-EU-fGR"/>
                         <outlet property="mapView" destination="pxv-lP-g9u" id="UeL-XL-9FP"/>
+                        <outlet property="phoneLabel" destination="XBA-Y6-ReA" id="Icf-kt-5cH"/>
                         <outlet property="phoneNumber" destination="6H5-wm-TjH" id="IZ4-tY-v3Z"/>
                     </connections>
                 </viewController>

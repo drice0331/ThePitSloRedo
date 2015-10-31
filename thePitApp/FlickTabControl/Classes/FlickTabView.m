@@ -39,7 +39,7 @@
 	
 	int items;
 	
-	if((items = [self.dataSource numberOfTabsInScrollTabView:self]) == 0) {
+	if((items = (int)[self.dataSource numberOfTabsInScrollTabView:self]) == 0) {
 		return;
 	}
 	
@@ -52,7 +52,8 @@
 		FlickTabButton* button = [[FlickTabButton alloc] initWithFrame:CGRectZero];
 		[button addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
 		
-		CGSize size = [str sizeWithFont:button.font];
+        NSDictionary* attributes = @{NSFontAttributeName: button.font};
+        CGSize size = [str sizeWithAttributes:attributes];
 		
 		button.frame = CGRectMake(origin_x, 0.0f, size.width+20.0f, 43.0f);
 		origin_x += size.width + 3.0f + 20.0f;

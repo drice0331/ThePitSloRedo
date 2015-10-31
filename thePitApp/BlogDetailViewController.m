@@ -27,7 +27,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
+    self.view.backgroundColor = [UIColor blackColor];
+    self.webView.backgroundColor = [UIColor blackColor];
     [self.webView setBackgroundColor:[UIColor blackColor]];
     
     NSURL *myURL = [NSURL URLWithString: [self.url stringByAddingPercentEscapesUsingEncoding:
@@ -36,7 +38,7 @@
     [self.webView loadRequest:request];
     UIBarButtonItem *shareButton = [[UIBarButtonItem alloc]
                                     initWithTitle:@"Share"
-                                    style:UIBarButtonItemStyleBordered
+                                    style:UIBarButtonItemStylePlain
                                     target:self
                                     action:@selector(shareDocument:)];
     self.navigationItem.rightBarButtonItem = shareButton;

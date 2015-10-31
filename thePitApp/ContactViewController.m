@@ -34,7 +34,7 @@
     [super viewDidLoad];
     self.mapView.delegate = self;
     
-    [self adjustMapviewPlacement];
+    [self setSubviewPlacement];
     
     //pit coordinates
     latitude = 0;
@@ -164,20 +164,35 @@
         }
 }
 
-- (void)adjustMapviewPlacement
+- (void)setSubviewPlacement
 {
-    CGSize iOSDeviceScreenSize = [[UIScreen mainScreen] bounds].size;
-    if (iOSDeviceScreenSize.height == 480)
-    {   // iPhone 3GS, 4, and 4S and iPod Touch 3rd and 4th generation: 3.5 inch screen (diagonally measured)
-        self.mapView.frame = CGRectMake(20, 290,280, 170);
-        
-    }
-    else if(iOSDeviceScreenSize.height == 568)
-    {
-        // iPhone 5 and iPod Touch 5th generation: 4 inch screen (diagonally measured)
-                self.mapView.frame = CGRectMake(20, 358, 280, 190);
+    CGFloat screenHeight = [[UIScreen mainScreen] bounds].size.height;
+    CGFloat screenWidth = [[UIScreen mainScreen] bounds].size.width;
+    
+    CGFloat allLabelX = screenWidth * 0.14375;
+    CGFloat allLabelWidth = screenWidth * 0.225;
+    
+    CGFloat allButtonX = screenWidth * .39375;
+    CGFloat allButtonWidth = screenWidth * .55625;
+    CGFloat allLabelButtonHeight = screenHeight * 0.0528169;
+    CGFloat allLabelButtonHeightGap = screenHeight * 0.11443662;
+    
+    CGFloat callLabelButtonY = screenHeight * 0.122;
+    
+    CGFloat mapViewX = screenWidth * 0.0625;
+    CGFloat mapViewWidth = screenWidth * 0.875;
+    CGFloat mapViewY = screenHeight * 0.55;
+    CGFloat mapViewHeight = screenHeight * 0.4;
+    
+    
+    self.phoneLabel.frame = CGRectMake(allLabelX, callLabelButtonY, allLabelWidth, allLabelButtonHeight);
+    self.phoneNumber.frame = CGRectMake(allButtonX, callLabelButtonY, allButtonWidth, allLabelButtonHeight);
+    self.emailLabel.frame = CGRectMake(allLabelX, callLabelButtonY + allLabelButtonHeightGap, allLabelWidth, allLabelButtonHeight);
+    self.email.frame = CGRectMake(allButtonX, callLabelButtonY + allLabelButtonHeightGap, allButtonWidth, allLabelButtonHeight);
+    self.addressLabel.frame = CGRectMake(allLabelX, callLabelButtonY + (allLabelButtonHeightGap *2), allLabelWidth, allLabelButtonHeight);
+    self.address.frame = CGRectMake(allButtonX, callLabelButtonY + (allLabelButtonHeightGap*2), allButtonWidth, allLabelButtonHeight);
+    self.mapView.frame = CGRectMake(mapViewX, mapViewY,mapViewWidth, mapViewHeight);
 
-    }
 }
 
 @end

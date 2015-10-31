@@ -126,7 +126,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    [self classTap:indexPath.row];
+    [self classTap:(int)indexPath.row];
 }
 
 
@@ -134,7 +134,7 @@
 #pragma mark FlickTabView Delegate & Data Source
 
 - (void)scrollTabView:(FlickTabView*)scrollTabView didSelectedTabAtIndex:(NSInteger)index {
-    scrollTabIndex = index;
+    scrollTabIndex = (int)index;
     if(index == 0) { //Mon
         dataLink = [NSURL URLWithString:@"https://spreadsheets.google.com/feeds/list/1ANODm-p1TJzR9DxR3FeAHDJyMRL_tdqut23PVckrtvI/od6/public/values"];
         self.title = @"Mon";
@@ -390,18 +390,20 @@
              
              NSLog(@"Todays weekday - %ld", (long)[nowComponents weekday]);
              
-             int weekday = (scrollTabIndex + 2) % 7;
+             int compWeekday = scrollTabIndex + 2;
+             int nsCalendarWeekday = compWeekday % 7;
+             
              int startHourInt = [[[feeds objectAtIndex:index] objectForKey:@"gsx:starthour"] intValue];
              int startMinuteInt = [[[feeds objectAtIndex:index] objectForKey:@"gsx:startminute"] intValue];
              
-             [eventComponents setWeekday:weekday];
+             [eventComponents setWeekday:nsCalendarWeekday];
              [eventComponents setHour:startHourInt];
              [eventComponents setMinute:startMinuteInt];
              [eventComponents setSecond:0];
              NSLog(@"Event weekday - %ld", (long)[eventComponents weekday]);
              
              
-             if([nowComponents weekday]  >= [eventComponents weekday])
+             if([nowComponents weekday]  >= compWeekday)
              {
                  if([nowComponents hour] >= [eventComponents hour])
                  {
