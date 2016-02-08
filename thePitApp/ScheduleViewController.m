@@ -7,6 +7,7 @@
 //
 
 #import "ScheduleViewController.h"
+#import "APIKeyAndConstants.h"
 
 @interface ScheduleViewController ()
 {
@@ -46,7 +47,7 @@
     
     //Setting copyright label as footer of tableview
     UILabel* label = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 50.0f)];
-    label.text = @"The Pit SLO";
+    label.text = orgname;
     label.textAlignment = NSTextAlignmentCenter;
     label.textColor = [UIColor redColor];
     label.font = [UIFont boldSystemFontOfSize:12.0f];
@@ -55,9 +56,9 @@
     
     
     //Default to Monday schedule
-    self.title = @"Mon";
+    self.title = scheduleMon;
     scrollTabIndex = 0;
-    dataLink = [NSURL URLWithString:@"https://spreadsheets.google.com/feeds/list/1ANODm-p1TJzR9DxR3FeAHDJyMRL_tdqut23PVckrtvI/od6/public/values"];
+    dataLink = [NSURL URLWithString:scheduleMonLink];
     
     feeds = [[NSMutableArray alloc] init];
     parser = [[NSXMLParser alloc] initWithContentsOfURL:dataLink];
@@ -101,11 +102,11 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
     }
     
-    NSMutableString *className = [[feeds objectAtIndex:indexPath.row] objectForKey: @"gsx:classname"];
-    NSMutableString *startHour = [[feeds objectAtIndex:indexPath.row] objectForKey: @"gsx:starthour"];
-    NSMutableString *startMinute = [[feeds objectAtIndex:indexPath.row] objectForKey: @"gsx:startminute"];
-    NSMutableString *endHour = [[feeds objectAtIndex:indexPath.row] objectForKey: @"gsx:endhour"];
-    NSMutableString *endMinute = [[feeds objectAtIndex:indexPath.row] objectForKey: @"gsx:endminute"];
+    NSMutableString *className = [[feeds objectAtIndex:indexPath.row] objectForKey: scheduleClassNameKey];
+    NSMutableString *startHour = [[feeds objectAtIndex:indexPath.row] objectForKey: scheduleStartHrKey];
+    NSMutableString *startMinute = [[feeds objectAtIndex:indexPath.row] objectForKey: scheduleStartMinKey];
+    NSMutableString *endHour = [[feeds objectAtIndex:indexPath.row] objectForKey: scheduleEndHrKey];
+    NSMutableString *endMinute = [[feeds objectAtIndex:indexPath.row] objectForKey: scheduleEndMinKey];
     
     NSString *startTime = [self formatTimeStringWithHour:startHour andMinute:startMinute];
     NSString *endTime = [self formatTimeStringWithHour:endHour andMinute:endMinute];
@@ -136,33 +137,33 @@
 - (void)scrollTabView:(FlickTabView*)scrollTabView didSelectedTabAtIndex:(NSInteger)index {
     scrollTabIndex = (int)index;
     if(index == 0) { //Mon
-        dataLink = [NSURL URLWithString:@"https://spreadsheets.google.com/feeds/list/1ANODm-p1TJzR9DxR3FeAHDJyMRL_tdqut23PVckrtvI/od6/public/values"];
-        self.title = @"Mon";
+        dataLink = [NSURL URLWithString:scheduleMonLink];
+        self.title = scheduleMon;
     }
     else if(index == 1) { //Tues
-        dataLink = [NSURL URLWithString:@"https://spreadsheets.google.com/feeds/list/1OMhTvEgFYK5BAAKGXYqrtym5im41w6M76ogjGvYDV3Q/od6/public/values"];
-        self.title = @"Tues";
+        dataLink = [NSURL URLWithString:scheduleTuesLink];
+        self.title = scheduleTues;
     }
     else if(index == 2) { //Wed
-        dataLink = [NSURL URLWithString:@"https://spreadsheets.google.com/feeds/list/1L3EN3azU1zUJGvG_9Nrz44_oE3PQtBugbBkXyeqik-4/od6/public/values"];
-        self.title = @"Wed";
+        dataLink = [NSURL URLWithString:scheduleWedLink];
+        self.title = scheduleWed;
     }
     else if(index == 3) { //Thurs
-        dataLink = [NSURL URLWithString:@"https://spreadsheets.google.com/feeds/list/1CjKvwDF06gF1bu768Swpo6pLaFLRyxTRREmhntH4A08/od6/public/values"];
-        self.title = @"Thurs";
+        dataLink = [NSURL URLWithString:scheduleThurLink];
+        self.title = scheduleThurs;
     }
     else if(index == 4) { //Fri
-        dataLink = [NSURL URLWithString:@"https://spreadsheets.google.com/feeds/list/1zm0GvQnqcePIT_WRXwAkAFYXWrrnJypZ-jlKtOsKUzY/od6/public/values"];
-        self.title = @"Fri";
+        dataLink = [NSURL URLWithString:scheduleFriLink];
+        self.title = scheduleFri;
     }
     else if(index == 5) { //Sat
-        dataLink = [NSURL URLWithString:@"https://spreadsheets.google.com/feeds/list/1qyvb3NGCc8aKXBJ6Fa5XPTqcG7ksELEYU8DANCPYZTo/od6/public/values"];
-        self.title = @"Sat";
+        dataLink = [NSURL URLWithString:scheduleSatLink];
+        self.title = scheduleSat;
     }
     else if(index == 6) {
         //no sunday schedule yet
         dataLink = [NSURL URLWithString:@""];
-        self.title = @"Sun";
+        self.title = scheduleSun;
     }
     
     feeds = [[NSMutableArray alloc] init];
@@ -183,26 +184,26 @@
 - (NSString*)scrollTabView:(FlickTabView*)scrollTabView titleForTabAtIndex:(NSInteger)index {
     NSString *day;
     if(index == 0) {
-        day = @"Mon";
+        day = scheduleMon;
     }
     else if(index == 1) {
-        day = @"Tues";
+        day = scheduleTues;
     }
     else if(index == 2) {
-        day = @"Wed";
+        day = scheduleWed;
     }
     else if(index == 3) {
-        day = @"Thurs";
+        day = scheduleThurs;
     }
     else if(index == 4) { //Fri
-        day = @"Fri";
+        day = scheduleFri;
     }
     else if(index == 5) {
-        day = @"Sat";
+        day = scheduleSat;
     }
     else if(index == 6) {
         //no sunday schedule yet
-        day = @"Sun";
+        day = scheduleSun;
     }
     
     return [NSString stringWithFormat:@"%@", day];
@@ -215,7 +216,7 @@
     //sets start element for parser -> setting a new value in entry, name, and progress arrays if "entry" is found by parser in xml data link
     element = elementName;
     
-    if ([element isEqualToString:@"entry"])
+    if ([element isEqualToString:scheduleEntryKey])
     {
         
         entry    = [[NSMutableDictionary alloc] init];
@@ -231,14 +232,14 @@
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
     
     //sets end element for parser -> setting a key-value pair to current entry dictionary, then adds the full entry to feed
-    if ([elementName isEqualToString:@"entry"])
+    if ([elementName isEqualToString:beltProgEntryKey])
     {
         
-        [entry setObject:classname forKey:@"gsx:classname"];
-        [entry setObject:starthour forKey:@"gsx:starthour"];
-        [entry setObject:endhour forKey:@"gsx:endhour"];
-        [entry setObject:startminute forKey:@"gsx:startminute"];
-        [entry setObject:endminute forKey:@"gsx:endminute"];
+        [entry setObject:classname forKey:scheduleClassNameKey];
+        [entry setObject:starthour forKey:scheduleStartHrKey];
+        [entry setObject:endhour forKey:scheduleEndHrKey];
+        [entry setObject:startminute forKey:scheduleStartMinKey];
+        [entry setObject:endminute forKey:scheduleEndMinKey];
         
         [feeds addObject:[entry copy]];
         
@@ -249,23 +250,23 @@
 - (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
     
     //add to speific value arrays if string for specified value is found by parser
-    if ([element isEqualToString:@"gsx:classname"])
+    if ([element isEqualToString:scheduleClassNameKey])
     {
         [classname appendString:string];
     }
-    else if ([element isEqualToString:@"gsx:starthour"])
+    else if ([element isEqualToString:scheduleStartHrKey])
     {
         [starthour appendString:string];
     }
-    else if([element isEqualToString:@"gsx:endhour"])
+    else if([element isEqualToString:scheduleEndHrKey])
     {
         [endhour appendString:string];
     }
-    else if ([element isEqualToString:@"gsx:startminute"])
+    else if ([element isEqualToString:scheduleStartMinKey])
     {
         [startminute appendString:string];
     }
-    else if([element isEqualToString:@"gsx:endminute"])
+    else if([element isEqualToString:scheduleEndMinKey])
     {
         [endminute appendString:string];
     }
@@ -377,7 +378,7 @@
              EKEventEditViewController *addController = [[EKEventEditViewController alloc] init];
              
              EKEvent *e = [EKEvent eventWithEventStore:_eventStore];
-             e.title = [[feeds objectAtIndex:index]objectForKey:@"gsx:classname"];
+             e.title = [[feeds objectAtIndex:index]objectForKey:scheduleClassNameKey];
              
              NSDate *today = [NSDate date];
             
@@ -393,8 +394,8 @@
              int compWeekday = scrollTabIndex + 2;
              int nsCalendarWeekday = compWeekday % 7;
              
-             int startHourInt = [[[feeds objectAtIndex:index] objectForKey:@"gsx:starthour"] intValue];
-             int startMinuteInt = [[[feeds objectAtIndex:index] objectForKey:@"gsx:startminute"] intValue];
+             int startHourInt = [[[feeds objectAtIndex:index] objectForKey:scheduleStartHrKey] intValue];
+             int startMinuteInt = [[[feeds objectAtIndex:index] objectForKey:scheduleStartMinKey] intValue];
              
              [eventComponents setWeekday:nsCalendarWeekday];
              [eventComponents setHour:startHourInt];
@@ -420,14 +421,14 @@
              
              e.startDate = beginningOfWeek;
              
-             int endHourInt = [[[feeds objectAtIndex:index] objectForKey:@"gsx:endhour"] intValue];
-             int endMinuteInt = [[[feeds objectAtIndex:index] objectForKey:@"gsx:endminute"] intValue];
+             int endHourInt = [[[feeds objectAtIndex:index] objectForKey:scheduleEndHrKey] intValue];
+             int endMinuteInt = [[[feeds objectAtIndex:index] objectForKey:scheduleEndMinKey] intValue];
              
              [eventComponents setHour:endHourInt];
              [eventComponents setMinute:endMinuteInt];
              NSDate *endOfWeek = [gregorian dateFromComponents:eventComponents];
              e.endDate = endOfWeek;
-             e.location = @"The Pit SLO";
+             e.location = orgname;
              
              addController.eventStore = self.eventStore;
              addController.event = e;

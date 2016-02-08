@@ -67,7 +67,6 @@
 		401B8F5C1B54A6790010D99E /* yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = 401B8F4F1B54A6790010D99E /* yellow.png */; };
 		401B8F661B54A8320010D99E /* BeltProgressDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 401B8F611B54A8320010D99E /* BeltProgressDetailController.m */; };
 		401B8F671B54A8320010D99E /* BeltProgressImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 401B8F631B54A8320010D99E /* BeltProgressImage.m */; };
-		401B8F681B54A8320010D99E /* BeltProgressTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 401B8F651B54A8320010D99E /* BeltProgressTableController.m */; };
 		401B8F6D1B54A8450010D99E /* BlogDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 401B8F6A1B54A8450010D99E /* BlogDetailViewController.m */; };
 		401B8F6E1B54A8450010D99E /* BlogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 401B8F6C1B54A8450010D99E /* BlogViewController.m */; };
 		401B8F711B54A8610010D99E /* ContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 401B8F701B54A8610010D99E /* ContactViewController.m */; };
@@ -166,8 +165,6 @@
 		401B8F611B54A8320010D99E /* BeltProgressDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeltProgressDetailController.m; sourceTree = "<group>"; };
 		401B8F621B54A8320010D99E /* BeltProgressImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeltProgressImage.h; sourceTree = "<group>"; };
 		401B8F631B54A8320010D99E /* BeltProgressImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeltProgressImage.m; sourceTree = "<group>"; };
-		401B8F641B54A8320010D99E /* BeltProgressTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeltProgressTableController.h; sourceTree = "<group>"; };
-		401B8F651B54A8320010D99E /* BeltProgressTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeltProgressTableController.m; sourceTree = "<group>"; };
 		401B8F691B54A8450010D99E /* BlogDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlogDetailViewController.h; sourceTree = "<group>"; };
 		401B8F6A1B54A8450010D99E /* BlogDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogDetailViewController.m; sourceTree = "<group>"; };
 		401B8F6B1B54A8450010D99E /* BlogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlogViewController.h; sourceTree = "<group>"; };
@@ -439,8 +436,6 @@
 			children = (
 				401B8F601B54A8320010D99E /* BeltProgressDetailController.h */,
 				401B8F611B54A8320010D99E /* BeltProgressDetailController.m */,
-				401B8F641B54A8320010D99E /* BeltProgressTableController.h */,
-				401B8F651B54A8320010D99E /* BeltProgressTableController.m */,
 				401B8F781B54A8940010D99E /* PageBeltTableController.h */,
 				401B8F791B54A8940010D99E /* PageBeltTableController.m */,
 				401B8F7A1B54A8940010D99E /* PageContainerViewController.h */,
@@ -650,7 +645,6 @@
 				401B8F661B54A8320010D99E /* BeltProgressDetailController.m in Sources */,
 				401B8F6E1B54A8450010D99E /* BlogViewController.m in Sources */,
 				4083F9441BDDB27B00019DD6 /* FlickTabButton.m in Sources */,
-				401B8F681B54A8320010D99E /* BeltProgressTableController.m in Sources */,
 				401B8F8C1B54A8E80010D99E /* YoutubeDetailController.m in Sources */,
 				401B8F841B54A8A70010D99E /* Reachability.m in Sources */,
 				401B8F871B54A8DE0010D99E /* TwitterController.m in Sources */,

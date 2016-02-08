@@ -7,6 +7,7 @@
 //
 
 #import "FacebookViewController.h"
+#import "APIKeyAndConstants.h"
 
 @interface FacebookViewController ()
 
@@ -50,7 +51,7 @@
 - (void)loadFacebookWebViewPage
 {
     // Load facebook data
-    NSString *fbUrlAddress = @"https://www.facebook.com/pages/The-Pit-SLO/142224835849113"; // here you put your own group
+    NSString *fbUrlAddress = facebookLink; // here you put your own group
     //Create a URL object.
     NSURL *fbUrl = [NSURL URLWithString:fbUrlAddress];
    

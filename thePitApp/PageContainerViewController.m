@@ -8,6 +8,7 @@
 
 #import "PageContainerViewController.h"
 #import "PageBeltTableController.h"
+#import "APIKeyAndConstants.h"
 
 @interface PageContainerViewController ()
 {
@@ -25,12 +26,12 @@
 {
     [super viewDidLoad];
 	// Create the data model    
-    _pageTables = @[@"Kempo Adults", @"Kempo Kids", @"Jiu Jitsu"];
+    _pageTables = @[beltProgKempoAdults, beltProgKempoKids, beltProgJiuJitsu];
     
     //title index variable initialize
     transitionComplete = false;
     indexForTitle = 0;
-    self.navigationItem.title = @"Kempo Adults";
+    self.navigationItem.title = beltProgKempoAdults;
     
     // Create page view controller
     self.pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageViewController"];
@@ -39,11 +40,11 @@
     
     PageBeltTableController *startingViewController = [self viewControllerAtIndex:0];
     /*
-    startingViewController.beltType = @"Kempo Adults";
+    startingViewController.beltType = beltProgKempoAdults;
     PageBeltTableController *secondViewController = [self viewControllerAtIndex:1];
-    startingViewController.beltType = @"Kempo Kids";
+    startingViewController.beltType = beltProgKempoKids;
     PageBeltTableController *thirdViewController = [self viewControllerAtIndex:2];
-    startingViewController.beltType = @"Jiu Jitsu";
+    startingViewController.beltType = beltProgJiuJitsu;
 */
     viewControllers = @[startingViewController];
     [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
@@ -62,13 +63,13 @@
     [super viewDidAppear:YES];
     if(pageIndex == 0)
     {
-        self.navigationItem.title = @"Kempo Adults";
+        self.navigationItem.title = beltProgKempoAdults;
     }
     else if(pageIndex == 1) {
-        self.navigationItem.title = @"Kempo Kids";
+        self.navigationItem.title = beltProgKempoKids;
     }
     else if(pageIndex == 2) {
-        self.navigationItem.title = @"Jiu Jitsu";
+        self.navigationItem.title = beltProgJiuJitsu;
     }
     
 }*/
@@ -96,20 +97,20 @@
     pageContentViewController.pageIndex = index;
     if(index == 0)
     {
-        //self.navigationItem.title = @"Kempo Adults";
-        pageContentViewController.beltType = @"Kempo Adults";
+        //self.navigationItem.title = beltProgKempoAdults;
+        pageContentViewController.beltType = beltProgKempoAdults;
         pageIndex = 0;
         
     }
     else if(index == 1){
-        //self.navigationItem.title = @"Kempo Kids";
-        pageContentViewController.beltType = @"Kempo Kids";
+        //self.navigationItem.title = beltProgKempoKids;
+        pageContentViewController.beltType = beltProgKempoKids;
         pageIndex = 1;
         
     }
     else if(index == 2){
-        //self.navigationItem.title = @"Jiu Jitsu";
-        pageContentViewController.beltType = @"Jiu Jitsu";
+        //self.navigationItem.title = beltProgJiuJitsu;
+        pageContentViewController.beltType = beltProgJiuJitsu;
         pageIndex = 2;
     }
     pageContentViewController.pageIndex = index;
@@ -130,15 +131,15 @@
         indexForTitle--;
         if(indexForTitle == 0)
         {
-            self.navigationItem.title = @"Kempo Adults";
+            self.navigationItem.title = beltProgKempoAdults;
         }
         else if(indexForTitle == 1)
         {
-            self.navigationItem.title = @"Kempo Kids";
+            self.navigationItem.title = beltProgKempoKids;
         }
         else if(indexForTitle == 2)
         {
-            self.navigationItem.title = @"Jiu Jitsu";
+            self.navigationItem.title = beltProgJiuJitsu;
         }
         transitionComplete = false;
     }
@@ -164,15 +165,15 @@
         indexForTitle++;
         if(indexForTitle == 0)
         {
-            self.navigationItem.title = @"Kempo Adults";
+            self.navigationItem.title = beltProgKempoAdults;
         }
         else if(indexForTitle == 1)
         {
-            self.navigationItem.title = @"Kempo Kids";
+            self.navigationItem.title = beltProgKempoKids;
         }
         else if(indexForTitle == 2)
         {
-            self.navigationItem.title = @"Jiu Jitsu";
+            self.navigationItem.title = beltProgJiuJitsu;
         }
         transitionComplete = false;
     }

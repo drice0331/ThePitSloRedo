@@ -8,6 +8,7 @@
 
 #import "BeltProgressDetailController.h"
 #import "PageBeltTableController.h"
+#import "APIKeyAndConstants.h"
 
 @interface PageBeltTableController ()
 {
@@ -43,19 +44,19 @@
     CGFloat y = self.tableView.frame.origin.y;
     NSLog(@"%f and view - %f", y, yView);
     
-    dataLink = [NSURL URLWithString:@"https://spreadsheets.google.com/feeds/list/0AsP6lrGC-fRldE43YWxHZGtwOHdiN0UwNU13OHRDRGc/od6/public/values"];
+    dataLink = [NSURL URLWithString:beltProgKempoAdultsLink];
     self.navigationItem.title = _beltType;
-    if([_beltType isEqualToString:@"Kempo Adults"])
+    if([_beltType isEqualToString:beltProgKempoAdults])
     {
-        dataLink = [NSURL URLWithString:@"https://spreadsheets.google.com/feeds/list/0AsP6lrGC-fRldE43YWxHZGtwOHdiN0UwNU13OHRDRGc/od6/public/values"];
+        dataLink = [NSURL URLWithString:beltProgKempoAdultsLink];
     }
-    else if([_beltType isEqualToString:@"Kempo Kids"])
+    else if([_beltType isEqualToString:beltProgKempoKids])
     {
-        dataLink = [NSURL URLWithString:@"https://spreadsheets.google.com/feeds/list/0AsP6lrGC-fRldFRZTURoUDY3OVhIajl2cFUzUm5relE/od6/public/values"];
+        dataLink = [NSURL URLWithString:beltProgKempoKidsLink];
     }
-    else if([_beltType isEqualToString:@"Jiu Jitsu"])
+    else if([_beltType isEqualToString:beltProgJiuJitsu])
     {
-        dataLink = [NSURL URLWithString:@"https://spreadsheets.google.com/feeds/list/0AsP6lrGC-fRldEd4Wnp2ekxuS21XUlNFNkE2aTRSS2c/od6/public/values"];
+        dataLink = [NSURL URLWithString:beltProgJiuJitsuLink];
     }
     
    //NSLog(_beltType);
@@ -104,7 +105,7 @@
     
     // Return cell at specified indexPath, and sets textlabel to a name
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    cell.textLabel.text = [[feeds objectAtIndex:indexPath.row] objectForKey: @"gsx:name"];
+    cell.textLabel.text = [[feeds objectAtIndex:indexPath.row] objectForKey: beltProgNameKey];
     
     cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
     cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:15.0];
@@ -119,7 +120,7 @@
     //sets start element for parser -> setting a new value in entry, name, and progress arrays if "entry" is found by parser in xml data link
     element = elementName;
     
-    if ([element isEqualToString:@"entry"])
+    if ([element isEqualToString:beltProgEntryKey])
     {
         
         entry    = [[NSMutableDictionary alloc] init];
@@ -135,13 +136,13 @@
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
     
     //sets end element for parser -> setting a key-value pair to current entry dictionary, then adds the full entry to feed
-    if ([elementName isEqualToString:@"entry"])
+    if ([elementName isEqualToString:beltProgEntryKey])
     {
         
-        [entry setObject:name forKey:@"gsx:name"];
-        [entry setObject:progress forKey:@"gsx:progress"];
-        [entry setObject:beltcolor forKey:@"gsx:belt"];
-        [entry setObject:infolink forKey:@"gsx:infolink"];
+        [entry setObject:name forKey:beltProgNameKey];
+        [entry setObject:progress forKey:beltProgProgressKey];
+        [entry setObject:beltcolor forKey:beltProgBeltColorKey];
+        [entry setObject:infolink forKey:beltProgInfoLinkKey];
         
         [feeds addObject:[entry copy]];
         
@@ -152,19 +153,19 @@
 - (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
     
     //add to speific value arrays if string for specified value is found by parser
-    if ([element isEqualToString:@"gsx:name"])
+    if ([element isEqualToString:beltProgNameKey])
     {
         [name appendString:string];
     }
-    else if ([element isEqualToString:@"gsx:progress"])
+    else if ([element isEqualToString:beltProgProgressKey])
     {
         [progress appendString:string];
     }
-    else if([element isEqualToString:@"gsx:belt"])
+    else if([element isEqualToString:beltProgBeltColorKey])
     {
         [beltcolor appendString:string];
     }
-    else if([element isEqualToString:@"gsx:infolink"])
+    else if([element isEqualToString:beltProgInfoLinkKey])
     {
         [infolink appendString:string];
     }
@@ -183,10 +184,10 @@
         
         //
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSString *gname = [feeds[indexPath.row] objectForKey:@"gsx:name"];
-        NSString *gprogress = [feeds[indexPath.row] objectForKey:@"gsx:progress"];
-        NSString *gcolor = [feeds[indexPath.row] objectForKey:@"gsx:belt"];
-        NSString *ginfolink = [feeds[indexPath.row] objectForKey:@"gsx:infolink"];
+        NSString *gname = [feeds[indexPath.row] objectForKey:beltProgNameKey];
+        NSString *gprogress = [feeds[indexPath.row] objectForKey:beltProgProgressKey];
+        NSString *gcolor = [feeds[indexPath.row] objectForKey:beltProgBeltColorKey];
+        NSString *ginfolink = [feeds[indexPath.row] objectForKey:beltProgInfoLinkKey];
         BeltProgressDetailController *bpdc = [segue destinationViewController];
         bpdc.beltProgressDetailInfo = [[NSArray alloc] initWithObjects: gname, gprogress, gcolor, _beltType, ginfolink, nil];
         

@@ -7,6 +7,7 @@
 //
 
 #import "ContactViewController.h"
+#import "APIKeyAndConstants.h"
 
 @interface ContactViewController ()
 {
@@ -41,9 +42,9 @@
     longitude = 0;
     
     //set label text
-    [self.phoneNumber setTitle:@"805-549-8800" forState:UIControlStateNormal];
-    [self.email setTitle:@" contact@thepitslo.com" forState:UIControlStateNormal];
-    [self.address setTitle:@"1285 Laurel Lane San Luis Obispo, CA 93401" forState:UIControlStateNormal];
+    [self.phoneNumber setTitle:contactPhone forState:UIControlStateNormal];
+    [self.email setTitle:contactEmail forState:UIControlStateNormal];
+    [self.address setTitle:contactAddress forState:UIControlStateNormal];
 
     self.address.titleLabel.text = @"Address: 1285 Laurel Lane";
     
@@ -53,9 +54,9 @@
     self.address.titleLabel.textAlignment = NSTextAlignmentLeft;
     //
     
-    NSString *addressString = [NSString stringWithFormat:@"1285 Laurel Lane San Luis Obispo California 93401"];
+    NSString *addressString = [NSString stringWithFormat:contactMapAddress];
     NSString *esc_addr =  [addressString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    NSString *req = [NSString stringWithFormat:@"http://maps.google.com/maps/api/geocode/json?sensor=false&address=%@", esc_addr];
+    NSString *req = [NSString stringWithFormat:contactGoogleMapString, esc_addr];
     NSString *result = [NSString stringWithContentsOfURL:[NSURL URLWithString:req] encoding:NSUTF8StringEncoding error:NULL];
     if (result) {
         NSScanner *scanner = [NSScanner scannerWithString:result];
@@ -78,7 +79,7 @@
     MKPointAnnotation *newAnnotation = [[MKPointAnnotation alloc] init];
     newAnnotation.coordinate = destination;
     newAnnotation.title = @"The Pit";
-    newAnnotation.subtitle = @"1285 Laurel Lane, San Luis Obispo, CA";
+    newAnnotation.subtitle = contactAddress;
     [_mapView addAnnotation:newAnnotation];
     [_mapView setRegion: adjustedRegion animated: NO];
 	// Do any additional setup after loading the view.
@@ -91,7 +92,7 @@
 }
 - (IBAction)callThePit:(id)sender
 {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"tel:18055498800"]];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:contactPhoneUrl]];
 }
 
 - (IBAction)emailThePit:(id)sender
@@ -101,7 +102,7 @@
     {
         MFMailComposeViewController *controller = [[MFMailComposeViewController alloc]init];
         controller.mailComposeDelegate = self;
-        NSArray *recipients = [[NSArray alloc]initWithObjects:@"contact@thepitslo.com", nil];
+        NSArray *recipients = [[NSArray alloc]initWithObjects:contactEmail, nil];
         [controller setToRecipients:recipients];
         [self presentViewController:controller animated:YES completion:nil];
         //check later, if doesn't work, do the ghetto mailto way
@@ -169,20 +170,20 @@
     CGFloat screenHeight = [[UIScreen mainScreen] bounds].size.height;
     CGFloat screenWidth = [[UIScreen mainScreen] bounds].size.width;
     
-    CGFloat allLabelX = screenWidth * 0.14375;
-    CGFloat allLabelWidth = screenWidth * 0.225;
+    CGFloat allLabelX = screenWidth * contactAllLabelsXRatio;
+    CGFloat allLabelWidth = screenWidth * contactAllLabelsWidthRatio;
     
-    CGFloat allButtonX = screenWidth * .39375;
-    CGFloat allButtonWidth = screenWidth * .55625;
-    CGFloat allLabelButtonHeight = screenHeight * 0.0528169;
-    CGFloat allLabelButtonHeightGap = screenHeight * 0.11443662;
+    CGFloat allButtonX = screenWidth * contactAllButtonsXRatio;
+    CGFloat allButtonWidth = screenWidth * contactAllButtonsWidthRatio;
+    CGFloat allLabelButtonHeight = screenHeight * contactAllLabelsAndButtonsHeightFactor;
+    CGFloat allLabelButtonHeightGap = screenHeight * contactAllLabelsAndButtonsHeightGapFactor;
     
-    CGFloat callLabelButtonY = screenHeight * 0.122;
+    CGFloat callLabelButtonY = screenHeight * contactCallLabelAndButtonYFactor;
     
-    CGFloat mapViewX = screenWidth * 0.0625;
-    CGFloat mapViewWidth = screenWidth * 0.875;
-    CGFloat mapViewY = screenHeight * 0.55;
-    CGFloat mapViewHeight = screenHeight * 0.4;
+    CGFloat mapViewX = screenWidth * contactMapViewYFactor;
+    CGFloat mapViewWidth = screenWidth * contactMapViewXFactor;
+    CGFloat mapViewY = screenHeight * contactMapViewHeightFactor;
+    CGFloat mapViewHeight = screenHeight * contactMapViewWidthFactor;
     
     
     self.phoneLabel.frame = CGRectMake(allLabelX, callLabelButtonY, allLabelWidth, allLabelButtonHeight);

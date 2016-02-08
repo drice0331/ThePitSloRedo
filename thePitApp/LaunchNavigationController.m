@@ -7,7 +7,7 @@
 //
 
 #import "LaunchNavigationController.h"
-
+#import "APIKeyAndConstants.h"
 
 @interface LaunchNavigationController ()
 
@@ -94,24 +94,24 @@
     CGFloat navigationBarHeight = self.navigationController.navigationBar.frame.size.height;
     
     //Side length
-    CGFloat top4ButtonHeightWidth = screenWidth * 0.421875;
-    CGFloat bottom3ButtonHeightWidth = screenWidth * 0.26875;
+    CGFloat top4ButtonHeightWidth = screenWidth * mainNavTop4ButtonHeightAndWidthFactor;
+    CGFloat bottom3ButtonHeightWidth = screenWidth * mainNavBottm3ButtonHeightAndWidthFactor;
     
     //Mid Space
-    CGFloat allButtonWidthGap = top4ButtonHeightWidth * 0.07407407407407;
-    CGFloat top4ButtonHeightGap = top4ButtonHeightWidth * 0.05925925925926;
-    CGFloat bottom3Top4HeightGap = screenHeight * 0.0625;
+    CGFloat allButtonWidthGap = top4ButtonHeightWidth * mainNavAllButtonWidthGapFactor;
+    CGFloat top4ButtonHeightGap = top4ButtonHeightWidth * mainNavTop4ButtonHeightGapFactor;
+    CGFloat bottom3Top4HeightGap = screenHeight * mainNavBottom3Top4HeightGapFactor;
 
     //Y all buttons
-    CGFloat blogAndBeltButtonY = screenHeight * 0.12916667;
+    CGFloat blogAndBeltButtonY = screenHeight * mainNavBlogAndBeltButtonYFactor;
     CGFloat contactAndScheduleButtonY = blogAndBeltButtonY + top4ButtonHeightWidth + top4ButtonHeightGap;
     CGFloat bottom3ButtonY = contactAndScheduleButtonY + top4ButtonHeightWidth + bottom3Top4HeightGap;
     
     //X of all buttons
-    CGFloat allLeftButtonX = screenWidth * 0.0625;
+    CGFloat allLeftButtonX = screenWidth * mainNavAllLeftButtonXFactor;
     CGFloat top4RightButtonX = allLeftButtonX + top4ButtonHeightWidth + allButtonWidthGap;
     CGFloat twitterButtonX = allLeftButtonX + bottom3ButtonHeightWidth + allButtonWidthGap;
-    CGFloat youtubeButtonX = twitterButtonX + (bottom3ButtonHeightWidth - 1) + allButtonWidthGap;// Minus 1 - twitter button 1 less in h and w
+    CGFloat youtubeButtonX = twitterButtonX + (bottom3ButtonHeightWidth - 1) + allButtonWidthGap; //Minus 1 - twitter button 1 less in h and w
     
     _blogButton.frame = CGRectMake(allLeftButtonX, blogAndBeltButtonY, top4ButtonHeightWidth, top4ButtonHeightWidth);
     _beltButton.frame = CGRectMake(top4RightButtonX, blogAndBeltButtonY, top4ButtonHeightWidth, top4ButtonHeightWidth);
@@ -120,32 +120,6 @@
     _fbButton.frame = CGRectMake(allLeftButtonX, bottom3ButtonY, bottom3ButtonHeightWidth, bottom3ButtonHeightWidth);
     _twitterButton.frame = CGRectMake(twitterButtonX, bottom3ButtonY, bottom3ButtonHeightWidth - 1, bottom3ButtonHeightWidth - 1);
     _youtubeButton.frame = CGRectMake(youtubeButtonX, bottom3ButtonY, bottom3ButtonHeightWidth, bottom3ButtonHeightWidth);
-    /*
-    if (iOSDeviceScreenSize.height == 480)
-    {   // iPhone 3GS, 4, and 4S and iPod Touch 3rd and 4th generation: 3.5 inch screen (diagonally measured)
-        NSLog(@"3.5 inch");
-        _blogButton.frame = CGRectMake(20, 62, 135, 135);
-        _contactButton.frame = CGRectMake(20, 205, 135, 135);
-        _beltButton.frame = CGRectMake(165, 62, 135, 135);
-        _scheduleButton.frame = CGRectMake(165, 205, 135, 135);
-        _fbButton.frame = CGRectMake(20, 370, 87, 86);
-        _twitterButton.frame = CGRectMake(117, 370, 86, 86);
-        _youtubeButton.frame = CGRectMake(213, 370, 87, 86);
-         
-        
-    }
-    else if(iOSDeviceScreenSize.height == 568)
-    {
-        // iPhone 5 and iPod Touch 5th generation: 4 inch screen (diagonally measured)
-        NSLog(@"4 inch");
-        _blogButton.frame = CGRectMake(20, 92, 135, 135);
-        _contactButton.frame = CGRectMake(20, 235, 135, 135);
-        _beltButton.frame = CGRectMake(165, 92, 135, 135);
-        _scheduleButton.frame = CGRectMake(165, 235, 135, 135);
-        _fbButton.frame = CGRectMake(20, 400, 87, 86);
-        _twitterButton.frame = CGRectMake(117, 400, 86, 86);
-        _youtubeButton.frame = CGRectMake(213, 400, 87, 86);
-    }*/
 }
 
 @end

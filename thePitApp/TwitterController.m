@@ -7,6 +7,7 @@
 //
 
 #import "TwitterController.h"
+#import "APIKeyAndConstants.h"
 
 @interface TwitterController ()
 
@@ -52,7 +53,7 @@
 - (void)loadTwitterWebViewPage
 {
     // Load facebook data
-    NSString *twitterUrlAddress = @"https://twitter.com/THEPITSLO"; // here you put your own group
+    NSString *twitterUrlAddress = twitterLink; // here you put your own group
     //Create a URL object.
     NSURL *twitterUrl = [NSURL URLWithString:twitterUrlAddress];
     

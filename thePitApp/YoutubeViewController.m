@@ -92,11 +92,11 @@
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSDictionary *video = [videos[indexPath.row] valueForKey:@"snippet"];
-    NSString *title = [video valueForKeyPath:@"title"];
-    NSDictionary *thumbnails = [video valueForKey:@"thumbnails"];
-    NSDictionary *thumbnailData = [thumbnails valueForKey:@"default"];
-    NSString *thumbnailImage = [thumbnailData valueForKeyPath:@"url"];
+    NSDictionary *video = [videos[indexPath.row] valueForKey:youtubeVideoKey];
+    NSString *title = [video valueForKeyPath:youtubeTitleKey];
+    NSDictionary *thumbnails = [video valueForKey:youtubeThumbnailKey];
+    NSDictionary *thumbnailData = [thumbnails valueForKey:youtubeDefaultKey];
+    NSString *thumbnailImage = [thumbnailData valueForKeyPath:youtubeUrlKey];
     
     cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
     cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:15.0];
@@ -118,10 +118,10 @@
 {
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
     
-    NSDictionary *video = [videos[indexPath.row] valueForKey:@"snippet"];
+    NSDictionary *video = [videos[indexPath.row] valueForKey:youtubeVideoKey];
     
-    NSDictionary *content = [video valueForKey:@"resourceId"];
-    NSString *videoId = [content valueForKeyPath:@"videoId"];
+    NSDictionary *content = [video valueForKey:youtubeResIdKey];
+    NSString *videoId = [content valueForKeyPath:youtubeVideoKey];
     NSString *url = [NSString stringWithFormat:@"%@%@", baseVideoURL, videoId];
     
     //NSDictionary *content2 = [video valueForKeyPath:@"media$group.media$player"][0];

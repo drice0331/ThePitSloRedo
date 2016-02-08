@@ -7,8 +7,8 @@
 //
 
 #import "BlogViewController.h"
-
 #import "BlogDetailViewController.h"
+#import "APIKeyAndConstants.h"
 
 @interface BlogViewController (){
     NSXMLParser *parser;
@@ -48,7 +48,7 @@
     self.tableView.backgroundColor = [UIColor blackColor];
     
     feeds = [[NSMutableArray alloc] init];
-    NSURL *url = [NSURL URLWithString:@"http://thepitslo.blogspot.com/feeds/posts/default?alt=rss"];
+    NSURL *url = [NSURL URLWithString:blogUrl];
     parser = [[NSXMLParser alloc] initWithContentsOfURL:url];
     [parser setDelegate:self];
     [parser setShouldResolveExternalEntities:NO];
@@ -65,7 +65,7 @@
 - (void)checkForConnection
 {
     
-    Reachability *internetReachability = [Reachability reachabilityWithHostName:@"http://thepitslo.blogspot.com/feeds/posts/default?alt=rss"];
+    Reachability *internetReachability = [Reachability reachabilityWithHostName:blogUrl];
     NetworkStatus statusInternet = [internetReachability currentReachabilityStatus];
     if(statusInternet != ReachableViaWWAN)
     {
@@ -88,7 +88,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BlogCell" forIndexPath:indexPath];
-    cell.textLabel.text = [[feeds objectAtIndex:indexPath.row] objectForKey: @"title"];
+    cell.textLabel.text = [[feeds objectAtIndex:indexPath.row] objectForKey: blogTitleKey];
 
     cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
     cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:17.0];
@@ -103,7 +103,7 @@
     
     element = elementName;
     
-    if ([element isEqualToString:@"item"])//@"item"
+    if ([element isEqualToString:blogItemKey])
     {
         
         item    = [[NSMutableDictionary alloc] init];
@@ -116,11 +116,11 @@
 
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
     
-    if ([elementName isEqualToString:@"item"])//@"item"
+    if ([elementName isEqualToString:blogItemKey])
     {
         
-        [item setObject:title forKey:@"title"];
-        [item setObject:link forKey:@"link"];
+        [item setObject:title forKey:blogTitleKey];
+        [item setObject:link forKey:blogLinkKey];
         
         [feeds addObject:[item copy]];
         
@@ -130,9 +130,9 @@
 
 - (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
     
-    if ([element isEqualToString:@"title"]) {
+    if ([element isEqualToString:blogTitleKey]) {
         [title appendString:string];
-    } else if ([element isEqualToString:@"link"]) {
+    } else if ([element isEqualToString:blogLinkKey]) {
         [link appendString:string];
     }
     
@@ -148,15 +148,8 @@
     if ([[segue identifier] isEqualToString:@"showBlogDetail"]) {
         
         NSIndexPath *indexPath = [self.blogPostTable indexPathForSelectedRow];
-        //NSDictionary *video = feeds[indexPath.row];// not here
-        //NSDictionary *content = [video valueForKeyPath:@"media$group.media$content"][0];
-        //NSString *url = [content valueForKeyPath:@"url"];
-        //NSLog([content valueForKeyPath:<#(NSString *)#>])
         
-        //NSString *uri = [feeds[indexPath.row] objectForKey:@"uri"];
-        
-        NSString *string = [feeds[indexPath.row] objectForKey: @"link"];
-        //NSLog(string);
+        NSString *string = [feeds[indexPath.row] objectForKey: blogLinkKey];
         [[segue destinationViewController] setUrl:string];
         
     }
